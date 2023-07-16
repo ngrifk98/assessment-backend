@@ -1,0 +1,25 @@
+The web app consists of two main files: `client/index.html` and `server/index.js`.
+
+The `client/index.html` file is responsible for creating the user interface of the web app. 
+It is an HTML file that contains a button element with the id "complimentButton". This button is displayed on the page, 
+and when clicked, it triggers a JavaScript file called `main.js`. The HTML file also includes two script tags. 
+The first one imports the Axios library from a CDN (Content Delivery Network), which is a popular HTTP client for 
+making requests from the browser. The second script tag imports the `main.js` file.
+
+The `server/index.js` file is responsible for setting up the server-side of the web app using Express.js, a web application 
+framework for Node.js. It starts by importing the necessary modules, `express` and `cors`. Express is used to create the server, 
+handle routes, and define middleware, while CORS is middleware that allows cross-origin resource sharing.
+
+The `app` variable is created by invoking the `express` function, and then the `cors` middleware is applied to the app using 
+`app.use(cors())`. This enables the server to respond to requests from different origins.
+
+The `express.json()` middleware is used to parse JSON data sent in the request body.
+
+The file imports a `getCompliment` function from a file named `controller.js` (not included in the code you provided). 
+This function is associated with the route `/api/compliment`, and it will be executed when a GET request is made to that route.
+
+Finally, the server is started by calling `app.listen(4000)` to listen on port 4000. A message is logged to the console 
+indicating that the server is running.
+
+To get a better understanding of how the web app works, you can examine the `main.js` file and the `controller.js` 
+file (if available) to see how they handle the button click event and generate compliments respectively.
